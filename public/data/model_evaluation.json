@@ -1,0 +1,983 @@
+{
+  "artifacts": {
+    "holdout_predictions": {
+      "bytes": 67295,
+      "path": "artifacts/holdout-predictions.csv",
+      "sha256": "d5a5a7e7c51f2dfa84fbac49bb7983ca9588fb7ffb9c8dcf04dcaddaee4379fb"
+    },
+    "model_bundle": {
+      "bytes": 631764,
+      "path": "artifacts/heatshield-model.joblib",
+      "sha256": "39f639e8ee302c5cc8594e22f08d52b96161d84fa11a88e8b58d47443a92746d"
+    }
+  },
+  "data": {
+    "manifest_path": "data/raw/manifest.json",
+    "manifest_sha256": "61db460b2193831d381ded75cce84459d307f435952c984f3e06633053a5b0a7",
+    "processed_path": "data/processed/daily-supervised.csv",
+    "processed_sha256": "7479fd060f2c7799aea55ccbc267f86e7baa4a9705e5d95de707a906b9f476c2",
+    "quality_policy": {
+      "accepted_isd_quality_codes": [
+        "0",
+        "1",
+        "4",
+        "5"
+      ],
+      "duplicate_report_handling": "median by station and local clock hour",
+      "minimum_apparent_observations_per_station_day": 12,
+      "rejected_quality_codes": [
+        "2",
+        "3",
+        "6",
+        "7",
+        "9"
+      ],
+      "temperature_dewpoint_sentinel": "+9999",
+      "wind_speed_sentinel": "9999"
+    },
+    "raw_entries": [
+      {
+        "bytes": 1050488,
+        "fetched_at_utc": "2026-08-02T04:09:58.337873Z",
+        "relative_path": "data/raw/global-hourly-2015-e26997ecfe8802ea.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 10504,
+        "season": {
+          "end": "2015-09-30",
+          "start": "2015-05-01"
+        },
+        "sha256": "e26997ecfe8802eab44b6c36873d5defdd9913839b11a63e9beae640f09d4901",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2015-05-01T00%3A00%3A00&endDate=2015-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2015
+      },
+      {
+        "bytes": 1029288,
+        "fetched_at_utc": "2026-08-02T04:11:35.077125Z",
+        "relative_path": "data/raw/global-hourly-2016-e88ff79f1de2acbb.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 10292,
+        "season": {
+          "end": "2016-09-30",
+          "start": "2016-05-01"
+        },
+        "sha256": "e88ff79f1de2acbbda60f3ef8611812049f0d9197e8e4c5c48e48f384d6daa6f",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2016-05-01T00%3A00%3A00&endDate=2016-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2016
+      },
+      {
+        "bytes": 988088,
+        "fetched_at_utc": "2026-08-02T04:11:37.211363Z",
+        "relative_path": "data/raw/global-hourly-2017-04633c4eff9b0fee.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 9880,
+        "season": {
+          "end": "2017-09-30",
+          "start": "2017-05-01"
+        },
+        "sha256": "04633c4eff9b0feee35a9ca022f8dd1f079a0a01ac7751f6f0bd043d387b53a0",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2017-05-01T00%3A00%3A00&endDate=2017-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2017
+      },
+      {
+        "bytes": 1065088,
+        "fetched_at_utc": "2026-08-02T04:11:39.388724Z",
+        "relative_path": "data/raw/global-hourly-2018-6b68ff2f4e66643d.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 10650,
+        "season": {
+          "end": "2018-09-30",
+          "start": "2018-05-01"
+        },
+        "sha256": "6b68ff2f4e66643d37b5f17a19afcb525650cf99ecbf227d7048869ab618a3bc",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2018-05-01T00%3A00%3A00&endDate=2018-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2018
+      },
+      {
+        "bytes": 1052188,
+        "fetched_at_utc": "2026-08-02T04:11:41.498428Z",
+        "relative_path": "data/raw/global-hourly-2019-177727db3edd2494.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 10521,
+        "season": {
+          "end": "2019-09-30",
+          "start": "2019-05-01"
+        },
+        "sha256": "177727db3edd2494d965a3c60ca68e41867f404dc5137a82156fabac00497451",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2019-05-01T00%3A00%3A00&endDate=2019-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2019
+      },
+      {
+        "bytes": 1007788,
+        "fetched_at_utc": "2026-08-02T04:11:43.664073Z",
+        "relative_path": "data/raw/global-hourly-2020-c0dcc1b3304955b9.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 10077,
+        "season": {
+          "end": "2020-09-30",
+          "start": "2020-05-01"
+        },
+        "sha256": "c0dcc1b3304955b9430c43939ae84d4f4e7b0d4431dd911d91ae3ea823746115",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2020-05-01T00%3A00%3A00&endDate=2020-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2020
+      },
+      {
+        "bytes": 990788,
+        "fetched_at_utc": "2026-08-02T04:11:45.504826Z",
+        "relative_path": "data/raw/global-hourly-2021-38ebc1ac52475fe4.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 9907,
+        "season": {
+          "end": "2021-09-30",
+          "start": "2021-05-01"
+        },
+        "sha256": "38ebc1ac52475fe485cf8c05eb3bedc93183535172d197ba1cb9c65027b6d53b",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2021-05-01T00%3A00%3A00&endDate=2021-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2021
+      },
+      {
+        "bytes": 1007988,
+        "fetched_at_utc": "2026-08-02T04:11:47.463016Z",
+        "relative_path": "data/raw/global-hourly-2022-a573f759b0aa4759.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 10079,
+        "season": {
+          "end": "2022-09-30",
+          "start": "2022-05-01"
+        },
+        "sha256": "a573f759b0aa47597e221c5767555587f0eae30133a982a4d7fa66dea89435e1",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2022-05-01T00%3A00%3A00&endDate=2022-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2022
+      },
+      {
+        "bytes": 1005888,
+        "fetched_at_utc": "2026-08-02T04:11:49.618199Z",
+        "relative_path": "data/raw/global-hourly-2023-fd2814f33c509403.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 10058,
+        "season": {
+          "end": "2023-09-30",
+          "start": "2023-05-01"
+        },
+        "sha256": "fd2814f33c509403ca48d9f3fd30bd2b95a20466f4ec7fb5a781324d0b50871e",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2023-05-01T00%3A00%3A00&endDate=2023-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2023
+      },
+      {
+        "bytes": 1047388,
+        "fetched_at_utc": "2026-08-02T04:11:52.169752Z",
+        "relative_path": "data/raw/global-hourly-2024-352039917bea5163.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 10473,
+        "season": {
+          "end": "2024-09-30",
+          "start": "2024-05-01"
+        },
+        "sha256": "352039917bea5163cc6d7475b82f6a0b68b16a8db0d9d46c7dfd025649f28b4d",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2024-05-01T00%3A00%3A00&endDate=2024-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2024
+      },
+      {
+        "bytes": 814788,
+        "fetched_at_utc": "2026-08-02T04:11:55.859699Z",
+        "relative_path": "data/raw/global-hourly-2025-4d090bf75c3f566c.csv",
+        "response_headers": {
+          "content-type": "text/csv;charset=utf-8"
+        },
+        "rows": 8147,
+        "season": {
+          "end": "2025-09-30",
+          "start": "2025-05-01"
+        },
+        "sha256": "4d090bf75c3f566caaeecc5306de12390f7aa8d7e892ff921ba7fbd856398ea0",
+        "stations": [
+          "72530094846",
+          "72534014819"
+        ],
+        "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2025-05-01T00%3A00%3A00&endDate=2025-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+        "year": 2025
+      }
+    ],
+    "source": "NOAA/NCEI Global Hourly",
+    "source_documentation": "https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation",
+    "stations": {
+      "72530094846": "Chicago O'Hare International Airport",
+      "72534014819": "Chicago Midway International Airport"
+    },
+    "warm_seasons": [
+      2015,
+      2025
+    ]
+  },
+  "features": {
+    "columns": [
+      "temp_max_f",
+      "temp_mean_f",
+      "temp_min_f",
+      "dew_max_f",
+      "dew_mean_f",
+      "rh_max_pct",
+      "rh_mean_pct",
+      "apparent_max_f",
+      "apparent_mean_f",
+      "wind_mean_ms",
+      "wind_max_ms",
+      "hours_apparent_ge_90",
+      "hours_apparent_ge_95",
+      "observation_hours",
+      "apparent_hours",
+      "coverage_fraction",
+      "temp_max_f_lag_1d",
+      "temp_max_f_lag_2d",
+      "temp_max_f_lag_3d",
+      "temp_max_f_rolling_3d_mean",
+      "temp_max_f_rolling_7d_mean",
+      "temp_min_f_lag_1d",
+      "temp_min_f_lag_2d",
+      "temp_min_f_lag_3d",
+      "temp_min_f_rolling_3d_mean",
+      "temp_min_f_rolling_7d_mean",
+      "dew_max_f_lag_1d",
+      "dew_max_f_lag_2d",
+      "dew_max_f_lag_3d",
+      "dew_max_f_rolling_3d_mean",
+      "dew_max_f_rolling_7d_mean",
+      "rh_mean_pct_lag_1d",
+      "rh_mean_pct_lag_2d",
+      "rh_mean_pct_lag_3d",
+      "rh_mean_pct_rolling_3d_mean",
+      "rh_mean_pct_rolling_7d_mean",
+      "apparent_max_f_lag_1d",
+      "apparent_max_f_lag_2d",
+      "apparent_max_f_lag_3d",
+      "apparent_max_f_rolling_3d_mean",
+      "apparent_max_f_rolling_7d_mean",
+      "wind_mean_ms_lag_1d",
+      "wind_mean_ms_lag_2d",
+      "wind_mean_ms_lag_3d",
+      "wind_mean_ms_rolling_3d_mean",
+      "wind_mean_ms_rolling_7d_mean",
+      "hours_apparent_ge_90_lag_1d",
+      "hours_apparent_ge_90_lag_2d",
+      "hours_apparent_ge_90_lag_3d",
+      "hours_apparent_ge_90_rolling_3d_mean",
+      "hours_apparent_ge_90_rolling_7d_mean",
+      "target_doy_sin",
+      "target_doy_cos",
+      "station_is_midway"
+    ],
+    "count": 54,
+    "demographic_features": [],
+    "medical_outcome_features": []
+  },
+  "forward_validation": [
+    {
+      "baselines": {
+        "climatology_classifier": {
+          "average_precision": 0.3332102268498255,
+          "brier_score": 0.05620550992467682,
+          "event_rate": 0.06578947368421052,
+          "expected_calibration_error_10bin": 0.031211083098238012,
+          "f1": 0.0,
+          "log_loss": 0.2089131328278317,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.8332746478873239,
+          "rows": 304,
+          "threshold": 0.5
+        },
+        "climatology_regression": {
+          "mae_f": 6.676114867473938,
+          "mean_bias_f": 1.2656332891594777,
+          "rmse_f": 8.44075527824895,
+          "rows": 304
+        },
+        "persistence": {
+          "mae_f": 6.083823036184211,
+          "mean_bias_f": -0.20053163486842107,
+          "rmse_f": 8.005904454297514,
+          "rows": 304
+        }
+      },
+      "model": {
+        "calibration": {
+          "decision_threshold": 0.25,
+          "method": "Platt logistic on forward out-of-fold logits",
+          "oof_rows": 608,
+          "oof_years": [
+            2017,
+            2018
+          ]
+        },
+        "classifier": {
+          "average_precision": 0.39243322105922507,
+          "brier_score": 0.050500722020116504,
+          "event_rate": 0.06578947368421052,
+          "expected_calibration_error_10bin": 0.043033350004006696,
+          "f1": 0.48,
+          "log_loss": 0.16871091914801176,
+          "precision": 0.4,
+          "recall": 0.6,
+          "roc_auc": 0.9364436619718309,
+          "rows": 304,
+          "threshold": 0.25
+        },
+        "regression": {
+          "mae_f": 5.597567373472502,
+          "mean_bias_f": 0.2774344763409488,
+          "quantile": {
+            "central_80_coverage": 0.7269736842105263,
+            "mean_interval_width_f": 15.526281905480884,
+            "pinball_q10": 1.1634439864216362,
+            "pinball_q50": 2.8419567258824316,
+            "pinball_q90": 1.2425151018777012
+          },
+          "rmse_f": 7.2252071251492485,
+          "rows": 304
+        }
+      },
+      "rows": {
+        "test": 304,
+        "train": 1216
+      },
+      "test_year": 2019,
+      "train_target_years": [
+        2015,
+        2018
+      ]
+    },
+    {
+      "baselines": {
+        "climatology_classifier": {
+          "average_precision": 0.15041631273911213,
+          "brier_score": 0.07140494747672538,
+          "event_rate": 0.07894736842105263,
+          "expected_calibration_error_10bin": 0.015250247695165697,
+          "f1": 0.0,
+          "log_loss": 0.2619875148474696,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.6802083333333333,
+          "rows": 304,
+          "threshold": 0.5
+        },
+        "climatology_regression": {
+          "mae_f": 6.849971221549243,
+          "mean_bias_f": -0.3472820396431395,
+          "rmse_f": 8.649770417463454,
+          "rows": 304
+        },
+        "persistence": {
+          "mae_f": 5.476833467105263,
+          "mean_bias_f": -0.0005921052631578704,
+          "rmse_f": 7.097736003479399,
+          "rows": 304
+        }
+      },
+      "model": {
+        "calibration": {
+          "decision_threshold": 0.16,
+          "method": "Platt logistic on forward out-of-fold logits",
+          "oof_rows": 912,
+          "oof_years": [
+            2017,
+            2018,
+            2019
+          ]
+        },
+        "classifier": {
+          "average_precision": 0.19404419091004751,
+          "brier_score": 0.08026034489162824,
+          "event_rate": 0.07894736842105263,
+          "expected_calibration_error_10bin": 0.060221612831425186,
+          "f1": 0.3218390804597701,
+          "log_loss": 0.2557559837914127,
+          "precision": 0.2222222222222222,
+          "recall": 0.5833333333333334,
+          "roc_auc": 0.8096726190476191,
+          "rows": 304,
+          "threshold": 0.16
+        },
+        "regression": {
+          "mae_f": 4.814319411688714,
+          "mean_bias_f": 0.36364123836107715,
+          "quantile": {
+            "central_80_coverage": 0.7664473684210527,
+            "mean_interval_width_f": 15.174812265424446,
+            "pinball_q10": 1.2493538907271209,
+            "pinball_q50": 2.271018182983643,
+            "pinball_q90": 1.1761257989888283
+          },
+          "rmse_f": 6.257965659194847,
+          "rows": 304
+        }
+      },
+      "rows": {
+        "test": 304,
+        "train": 1520
+      },
+      "test_year": 2020,
+      "train_target_years": [
+        2015,
+        2019
+      ]
+    },
+    {
+      "baselines": {
+        "climatology_classifier": {
+          "average_precision": 0.08728197380124827,
+          "brier_score": 0.06277699322083134,
+          "event_rate": 0.06578947368421052,
+          "expected_calibration_error_10bin": 0.032168381121495525,
+          "f1": 0.0,
+          "log_loss": 0.23742281204245638,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.6447183098591549,
+          "rows": 304,
+          "threshold": 0.5
+        },
+        "climatology_regression": {
+          "mae_f": 7.279337229133507,
+          "mean_bias_f": -0.7033192748548087,
+          "rmse_f": 8.806397119369679,
+          "rows": 304
+        },
+        "persistence": {
+          "mae_f": 5.615296638157894,
+          "mean_bias_f": 0.013654684210526291,
+          "rmse_f": 7.155861787380401,
+          "rows": 304
+        }
+      },
+      "model": {
+        "calibration": {
+          "decision_threshold": 0.13,
+          "method": "Platt logistic on forward out-of-fold logits",
+          "oof_rows": 1216,
+          "oof_years": [
+            2017,
+            2018,
+            2019,
+            2020
+          ]
+        },
+        "classifier": {
+          "average_precision": 0.47846643568035246,
+          "brier_score": 0.05027218870844623,
+          "event_rate": 0.06578947368421052,
+          "expected_calibration_error_10bin": 0.04657250345336234,
+          "f1": 0.28,
+          "log_loss": 0.1939479408034609,
+          "precision": 0.175,
+          "recall": 0.7,
+          "roc_auc": 0.8329225352112676,
+          "rows": 304,
+          "threshold": 0.13
+        },
+        "regression": {
+          "mae_f": 4.772393076342794,
+          "mean_bias_f": 0.47575768207048563,
+          "quantile": {
+            "central_80_coverage": 0.7302631578947368,
+            "mean_interval_width_f": 14.91864310110454,
+            "pinball_q10": 1.1898240496468377,
+            "pinball_q50": 2.414008739936199,
+            "pinball_q90": 1.1144624057356634
+          },
+          "rmse_f": 6.389798772555326,
+          "rows": 304
+        }
+      },
+      "rows": {
+        "test": 304,
+        "train": 1824
+      },
+      "test_year": 2021,
+      "train_target_years": [
+        2015,
+        2020
+      ]
+    },
+    {
+      "baselines": {
+        "climatology_classifier": {
+          "average_precision": 0.08021531545849069,
+          "brier_score": 0.06051973268858438,
+          "event_rate": 0.0625,
+          "expected_calibration_error_10bin": 0.04993994305135536,
+          "f1": 0.0,
+          "log_loss": 0.2439714756481484,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.5552169898430286,
+          "rows": 304,
+          "threshold": 0.5
+        },
+        "climatology_regression": {
+          "mae_f": 7.29568150707068,
+          "mean_bias_f": -0.6012205327018372,
+          "rmse_f": 9.558608363743135,
+          "rows": 304
+        },
+        "persistence": {
+          "mae_f": 6.051151282894737,
+          "mean_bias_f": -0.05624999999999996,
+          "rmse_f": 8.31336612051435,
+          "rows": 304
+        }
+      },
+      "model": {
+        "calibration": {
+          "decision_threshold": 0.16,
+          "method": "Platt logistic on forward out-of-fold logits",
+          "oof_rows": 1520,
+          "oof_years": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021
+          ]
+        },
+        "classifier": {
+          "average_precision": 0.3001406250027419,
+          "brier_score": 0.05290373081938478,
+          "event_rate": 0.0625,
+          "expected_calibration_error_10bin": 0.02595461642144968,
+          "f1": 0.3,
+          "log_loss": 0.20140112666736484,
+          "precision": 0.21951219512195122,
+          "recall": 0.47368421052631576,
+          "roc_auc": 0.774145891043398,
+          "rows": 304,
+          "threshold": 0.16
+        },
+        "regression": {
+          "mae_f": 5.579547507372743,
+          "mean_bias_f": 0.16139046085226577,
+          "quantile": {
+            "central_80_coverage": 0.6907894736842105,
+            "mean_interval_width_f": 14.902880366690765,
+            "pinball_q10": 1.206065146628208,
+            "pinball_q50": 2.8112123141305987,
+            "pinball_q90": 1.573158111134258
+          },
+          "rmse_f": 7.393345846575237,
+          "rows": 304
+        }
+      },
+      "rows": {
+        "test": 304,
+        "train": 2128
+      },
+      "test_year": 2022,
+      "train_target_years": [
+        2015,
+        2021
+      ]
+    },
+    {
+      "baselines": {
+        "climatology_classifier": {
+          "average_precision": 0.099234074504944,
+          "brier_score": 0.05181581677419344,
+          "event_rate": 0.05592105263157895,
+          "expected_calibration_error_10bin": 0.01923495501400124,
+          "f1": 0.0,
+          "log_loss": 0.20030473850299593,
+          "precision": 0.0,
+          "recall": 0.0,
+          "roc_auc": 0.7282229965156795,
+          "rows": 304,
+          "threshold": 0.5
+        },
+        "climatology_regression": {
+          "mae_f": 6.462435330955095,
+          "mean_bias_f": 0.18449769914357636,
+          "rmse_f": 8.464996483824288,
+          "rows": 304
+        },
+        "persistence": {
+          "mae_f": 6.021374641447369,
+          "mean_bias_f": -0.2278374046052632,
+          "rmse_f": 8.02680130263611,
+          "rows": 304
+        }
+      },
+      "model": {
+        "calibration": {
+          "decision_threshold": 0.15000000000000002,
+          "method": "Platt logistic on forward out-of-fold logits",
+          "oof_rows": 1824,
+          "oof_years": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022
+          ]
+        },
+        "classifier": {
+          "average_precision": 0.3350893521727478,
+          "brier_score": 0.04482778222441169,
+          "event_rate": 0.05592105263157895,
+          "expected_calibration_error_10bin": 0.03127469124150996,
+          "f1": 0.34782608695652173,
+          "log_loss": 0.17283663393369095,
+          "precision": 0.23076923076923078,
+          "recall": 0.7058823529411765,
+          "roc_auc": 0.8231194916991186,
+          "rows": 304,
+          "threshold": 0.15000000000000002
+        },
+        "regression": {
+          "mae_f": 5.329546387948081,
+          "mean_bias_f": 0.21451412752465612,
+          "quantile": {
+            "central_80_coverage": 0.7467105263157895,
+            "mean_interval_width_f": 14.753293957169236,
+            "pinball_q10": 1.1397667326912422,
+            "pinball_q50": 2.625892118697998,
+            "pinball_q90": 1.1801036404405039
+          },
+          "rmse_f": 7.117718018503001,
+          "rows": 304
+        }
+      },
+      "rows": {
+        "test": 304,
+        "train": 2432
+      },
+      "test_year": 2023,
+      "train_target_years": [
+        2015,
+        2022
+      ]
+    }
+  ],
+  "generated_at_utc": "2026-08-02T04:38:33.740313Z",
+  "holdout": {
+    "baselines": {
+      "climatology_classifier": {
+        "average_precision": 0.17350653418264228,
+        "brier_score": 0.1021633734369487,
+        "event_rate": 0.11753731343283583,
+        "expected_calibration_error_10bin": 0.04370332140761364,
+        "f1": 0.0,
+        "log_loss": 0.3489116250096204,
+        "precision": 0.0,
+        "recall": 0.0,
+        "roc_auc": 0.6680089935903889,
+        "rows": 536,
+        "threshold": 0.5
+      },
+      "climatology_regression": {
+        "mae_f": 7.275327412922414,
+        "mean_bias_f": -1.3224480274715342,
+        "rmse_f": 8.99170998237075,
+        "rows": 536
+      },
+      "persistence": {
+        "mae_f": 5.840913925373134,
+        "mean_bias_f": -0.021492537313432813,
+        "rmse_f": 7.660776113161068,
+        "rows": 536
+      }
+    },
+    "model": {
+      "classifier": {
+        "average_precision": 0.4275926548882897,
+        "brier_score": 0.08702683970609755,
+        "event_rate": 0.11753731343283583,
+        "expected_calibration_error_10bin": 0.03528848979487495,
+        "f1": 0.3776223776223776,
+        "log_loss": 0.29624160679575523,
+        "precision": 0.3375,
+        "recall": 0.42857142857142855,
+        "roc_auc": 0.8050270143293399,
+        "rows": 536,
+        "threshold": 0.19
+      },
+      "regression": {
+        "mae_f": 5.447147727780114,
+        "mean_bias_f": -0.4142257626480843,
+        "quantile": {
+          "central_80_coverage": 0.7369402985074627,
+          "mean_interval_width_f": 15.482097059450552,
+          "pinball_q10": 1.2269130196501332,
+          "pinball_q50": 2.5950196849873994,
+          "pinball_q90": 1.2614811340951904
+        },
+        "rmse_f": 7.079708102102799,
+        "rows": 536
+      }
+    },
+    "slices": {
+      "season": {
+        "early_may_june": {
+          "classifier": {
+            "average_precision": 0.3252299120689003,
+            "brier_score": 0.09067607637158363,
+            "event_rate": 0.10833333333333334,
+            "expected_calibration_error_10bin": 0.06541389980021571,
+            "f1": 0.19047619047619047,
+            "log_loss": 0.30137190197177094,
+            "precision": 0.25,
+            "recall": 0.15384615384615385,
+            "roc_auc": 0.825664989216391,
+            "rows": 240,
+            "threshold": 0.19
+          },
+          "regression": {
+            "mae_f": 6.726565297291892,
+            "mean_bias_f": -0.7528597545931061,
+            "quantile": {
+              "central_80_coverage": 0.7041666666666667,
+              "mean_interval_width_f": 16.917826028311016,
+              "pinball_q10": 1.3452936444595784,
+              "pinball_q50": 3.101736768955813,
+              "pinball_q90": 1.4062999454549414
+            },
+            "rmse_f": 8.232709490012684,
+            "rows": 240
+          }
+        },
+        "late_september": {
+          "classifier": {
+            "average_precision": null,
+            "brier_score": 0.005100533031003545,
+            "event_rate": 0.0,
+            "expected_calibration_error_10bin": 0.05256677689483874,
+            "f1": 0.0,
+            "log_loss": 0.055471949894634234,
+            "precision": 0.0,
+            "recall": 0.0,
+            "roc_auc": null,
+            "rows": 60,
+            "threshold": 0.19
+          },
+          "regression": {
+            "mae_f": 3.639462180272526,
+            "mean_bias_f": 0.9153126389222803,
+            "quantile": {
+              "central_80_coverage": 0.85,
+              "mean_interval_width_f": 14.42718601001602,
+              "pinball_q10": 1.104712641451564,
+              "pinball_q50": 1.7773668116730257,
+              "pinball_q90": 0.8275399363926255
+            },
+            "rmse_f": 5.045470198548403,
+            "rows": 60
+          }
+        },
+        "peak_july_august": {
+          "classifier": {
+            "average_precision": 0.5444524402631004,
+            "brier_score": 0.10414447360774576,
+            "event_rate": 0.15677966101694915,
+            "expected_calibration_error_10bin": 0.039403924162469045,
+            "f1": 0.46,
+            "log_loss": 0.35223698210009224,
+            "precision": 0.36507936507936506,
+            "recall": 0.6216216216216216,
+            "roc_auc": 0.782968898546788,
+            "rows": 236,
+            "threshold": 0.19
+          },
+          "regression": {
+            "mae_f": 4.605626186117522,
+            "mean_bias_f": -0.40787044920493465,
+            "quantile": {
+              "central_80_coverage": 0.7415254237288136,
+              "mean_interval_width_f": 14.290231425719867,
+              "pinball_q10": 1.137593836335079,
+              "pinball_q50": 2.2875920250147,
+              "pinball_q90": 1.2245317999249097
+            },
+            "rmse_f": 6.19989321530242,
+            "rows": 236
+          }
+        }
+      },
+      "station": {
+        "Chicago Midway International Airport": {
+          "classifier": {
+            "average_precision": 0.44953753740291863,
+            "brier_score": 0.09148044119298382,
+            "event_rate": 0.12639405204460966,
+            "expected_calibration_error_10bin": 0.04641017032404139,
+            "f1": 0.4,
+            "log_loss": 0.30499735935058236,
+            "precision": 0.36585365853658536,
+            "recall": 0.4411764705882353,
+            "roc_auc": 0.8202753441802253,
+            "rows": 269,
+            "threshold": 0.19
+          },
+          "regression": {
+            "mae_f": 5.340221519244667,
+            "mean_bias_f": -0.333441800408189,
+            "quantile": {
+              "central_80_coverage": 0.7509293680297398,
+              "mean_interval_width_f": 15.292613311450383,
+              "pinball_q10": 1.1868591015497825,
+              "pinball_q50": 2.550213178667647,
+              "pinball_q90": 1.2509848141175708
+            },
+            "rmse_f": 6.928329431412432,
+            "rows": 269
+          }
+        },
+        "Chicago O'Hare International Airport": {
+          "classifier": {
+            "average_precision": 0.41204244623948755,
+            "brier_score": 0.08253987790844808,
+            "event_rate": 0.10861423220973783,
+            "expected_calibration_error_10bin": 0.03266680239794524,
+            "f1": 0.35294117647058826,
+            "log_loss": 0.2874202680794689,
+            "precision": 0.3076923076923077,
+            "recall": 0.41379310344827586,
+            "roc_auc": 0.7875977977397856,
+            "rows": 267,
+            "threshold": 0.19
+          },
+          "regression": {
+            "mae_f": 5.554874881697849,
+            "mean_bias_f": -0.4956148482006381,
+            "quantile": {
+              "central_80_coverage": 0.7228464419475655,
+              "mean_interval_width_f": 15.673000161368323,
+              "pinball_q10": 1.2672669670995502,
+              "pinball_q50": 2.6401618205679735,
+              "pinball_q90": 1.2720560781924926
+            },
+            "rmse_f": 7.229015765821925,
+            "rows": 267
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "The NWS Heat Index describes shade with light wind; direct sun can make conditions feel up to about 15 F hotter.",
+    "The Rothfusz regression is not extrapolated below its official warm-humid trigger; apparent temperature equals air temperature there.",
+    "Airport station observations do not resolve neighborhood-scale urban heat, indoor exposure, health outcomes, or personal risk.",
+    "This is a research forecast trained on May-September observations and should not replace official NWS alerts or forecasts."
+  ],
+  "models": {
+    "calibration": {
+      "decision_threshold": 0.19,
+      "method": "Platt logistic on forward out-of-fold logits",
+      "oof_rows": 2128,
+      "oof_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    "classifier": "class-balanced HistGradientBoostingClassifier",
+    "point_regressor": "HistGradientBoostingRegressor",
+    "quantile_regressors": "GradientBoostingRegressor at q=0.10, 0.50, 0.90"
+  },
+  "purpose": "Environmental next-day heat forecasting for Chicago; no medical outcome or demographic features",
+  "references": {
+    "noaa_data_terms": "https://sos.noaa.gov/copyright/",
+    "nws_heat_index": "https://www.weather.gov/tbw/heatindex"
+  },
+  "rows": {
+    "development": 2736,
+    "holdout": 536,
+    "holdout_events": 63,
+    "total": 3272
+  },
+  "schema_version": 1,
+  "split": {
+    "forward_validation_test_years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "model_development_target_years": [
+      2015,
+      2023
+    ],
+    "untouched_holdout_target_years": [
+      2024,
+      2025
+    ]
+  },
+  "target": {
+    "classifier": "next-day maximum apparent temperature >= 95 F",
+    "forecast_origin": "end of local feature day",
+    "regression": "next-day maximum apparent temperature, degrees F",
+    "threshold_f": 95.0
+  }
+}

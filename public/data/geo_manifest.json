@@ -1,0 +1,397 @@
+{
+  "manifest_version": 1,
+  "generated_at_utc": "2026-08-02T04:26:35.527934Z",
+  "scope": {
+    "staging_only": true,
+    "web_target": "HeatShield static-first PWA",
+    "download_cap_bytes_per_file": 104857600,
+    "projected_crs": "EPSG:26916"
+  },
+  "sources": {
+    "tiger_2022_illinois_tracts": {
+      "requested_url": "https://www2.census.gov/geo/tiger/TIGER2022/TRACT/tl_2022_17_tract.zip",
+      "final_url": "https://www2.census.gov/geo/tiger/TIGER2022/TRACT/tl_2022_17_tract.zip",
+      "retrieved_at_utc": "2026-08-02T04:26:21.225227Z",
+      "bytes": 10005539,
+      "sha256": "ec3011e6ef485151620e3e4d17f052101f819bd5f6c36dd7da855dcb0d5c8348",
+      "http": {
+        "content_type": null,
+        "etag": null,
+        "last_modified": null
+      }
+    },
+    "chicago_community_areas": {
+      "requested_url": "https://data.cityofchicago.org/resource/igwz-8jzy.geojson?$limit=100",
+      "final_url": "https://data.cityofchicago.org/resource/igwz-8jzy.geojson?$limit=100",
+      "retrieved_at_utc": "2026-08-02T04:26:21.450266Z",
+      "bytes": 2072102,
+      "sha256": "3468ac30bd813fa17d755b12a911a43c44f251465604bbe8e1ca1b1b540dca66",
+      "http": {
+        "content_type": null,
+        "etag": null,
+        "last_modified": null
+      },
+      "metadata_url": "https://data.cityofchicago.org/api/views/igwz-8jzy",
+      "dataset_id": "igwz-8jzy",
+      "provenance": "official",
+      "attribution": "City of Chicago"
+    },
+    "chicago_cooling_centers": {
+      "file": "chicago_cooling_centers.csv",
+      "format": "CSV",
+      "requested_url": "https://data.cityofchicago.org/resource/msrk-w9ih.csv?$select=site_type%2Csite_name%2Chours_of_operation%2Caddress%2Czip%2Cphone%2Clocation&$limit=5000",
+      "final_url": "https://data.cityofchicago.org/resource/msrk-w9ih.csv?$select=site_type%2Csite_name%2Chours_of_operation%2Caddress%2Czip%2Cphone%2Clocation&$limit=5000",
+      "terms_url": "https://data.cityofchicago.org/stories/s/Data-Portal-FAQ/iy9c-7e89/",
+      "retrieved_at_utc": "2026-08-02T03:45:01.455090Z",
+      "http": {
+        "status": 200,
+        "headers": {
+          "content-type": "text/csv; charset=UTF-8",
+          "date": "Sun, 02 Aug 2026 03:45:08 GMT",
+          "etag": "W/\"Zm94dHJvdC43NTgxXzEyXzE2NV9pNTE0UWpjcDlaUnNIWExkUkFsY2FvdmhoTQ---gzigmnwevWu5s5hTyvvSqsMbdtsvc4--gzip--gzip\"",
+          "last-modified": "Fri, 24 Jul 2026 22:06:15 GMT"
+        }
+      },
+      "bytes": 38595,
+      "sha256": "fe4090fa0242bb1974f40301cbd6a5eff9f88d1fa872f9d02f53a074c1a277d3",
+      "schema": [
+        {
+          "name": "site_type",
+          "type": "text"
+        },
+        {
+          "name": "site_name",
+          "type": "text"
+        },
+        {
+          "name": "hours_of_operation",
+          "type": "text"
+        },
+        {
+          "name": "address",
+          "type": "text"
+        },
+        {
+          "name": "zip",
+          "type": "text"
+        },
+        {
+          "name": "phone",
+          "type": "text"
+        },
+        {
+          "name": "location",
+          "type": "text"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "row_count": 287,
+        "expected_row_count_band": {
+          "min": 250,
+          "max": 350
+        },
+        "key_definition": [
+          "site_type",
+          "site_name",
+          "address",
+          "zip"
+        ],
+        "unique_key_count": 287,
+        "duplicate_key_count": 0,
+        "duplicate_row_excess": 0,
+        "missing_counts": {
+          "site_type": 0,
+          "site_name": 0,
+          "hours_of_operation": 132,
+          "address": 0,
+          "zip": 110,
+          "phone": 110,
+          "location": 0
+        },
+        "sentinel_minus_999_counts": {
+          "site_type": 0,
+          "site_name": 0,
+          "hours_of_operation": 0,
+          "address": 0,
+          "zip": 0,
+          "phone": 0,
+          "location": 0
+        },
+        "coordinate_validation": {
+          "format": "WKT POINT",
+          "wkt_order": "longitude latitude",
+          "present": 287,
+          "missing": 0,
+          "parse_errors": 0,
+          "outside_wgs84": 0,
+          "outside_chicago_bounds": 0,
+          "chicago_bounds": {
+            "longitude": [
+              -88.1,
+              -87.3
+            ],
+            "latitude": [
+              41.6,
+              42.1
+            ]
+          }
+        }
+      }
+    },
+    "cdc_atsdr_svi_2022_cook_county": {
+      "file": "cdc_atsdr_svi_2022_cook_county.json",
+      "format": "ArcGIS JSON feature set",
+      "requested_url": "https://onemap.cdc.gov/OneMapServices/rest/services/SVI/CDC_ATSDR_Social_Vulnerability_Index_2022_USA/MapServer/2/query?where=STCNTY%3D%2717031%27&outFields=FIPS%2CLOCATION%2CE_TOTPOP%2CEP_POV150%2CEP_AGE65%2CEP_AGE17%2CEP_DISABL%2CEP_LIMENG%2CEP_NOVEH%2CEP_NOINT%2CRPL_THEMES%2CRPL_THEME1%2CRPL_THEME2%2CRPL_THEME4%2CEP_AFAM%2CEP_HISP&returnGeometry=false&f=json",
+      "final_url": "https://onemap.cdc.gov/OneMapServices/rest/services/SVI/CDC_ATSDR_Social_Vulnerability_Index_2022_USA/MapServer/2/query?where=STCNTY%3D%2717031%27&outFields=FIPS%2CLOCATION%2CE_TOTPOP%2CEP_POV150%2CEP_AGE65%2CEP_AGE17%2CEP_DISABL%2CEP_LIMENG%2CEP_NOVEH%2CEP_NOINT%2CRPL_THEMES%2CRPL_THEME1%2CRPL_THEME2%2CRPL_THEME4%2CEP_AFAM%2CEP_HISP&returnGeometry=false&f=json",
+      "terms_url": "https://www.cdc.gov/other/agencymaterials.html",
+      "retrieved_at_utc": "2026-08-02T03:45:02.384029Z",
+      "http": {
+        "status": 200,
+        "headers": {
+          "cache-control": "public, must-revalidate, max-age=0",
+          "content-type": "application/json;charset=UTF-8",
+          "date": "Sun, 02 Aug 2026 03:45:08 GMT",
+          "etag": "\"b259bfd4\""
+        }
+      },
+      "bytes": 442496,
+      "sha256": "ae5ce81a7b0fc45ffc795c67785bb8dd86b5a22e77315a5647dde65c22bfdec2",
+      "schema": [
+        {
+          "name": "FIPS",
+          "type": "esriFieldTypeString",
+          "alias": "Tract-level FIPS code"
+        },
+        {
+          "name": "LOCATION",
+          "type": "esriFieldTypeString",
+          "alias": "Text description of tract, county, state"
+        },
+        {
+          "name": "E_TOTPOP",
+          "type": "esriFieldTypeInteger",
+          "alias": "Population estimate, 2018-2022 ACS"
+        },
+        {
+          "name": "EP_POV150",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of persons below 150% poverty estimate"
+        },
+        {
+          "name": "EP_AGE65",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of persons aged 65 and older estimate, 2018-2022 ACS"
+        },
+        {
+          "name": "EP_AGE17",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of persons aged 17 and younger estimate, 2018-2022 ACS"
+        },
+        {
+          "name": "EP_DISABL",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of civilian noninstitutionalized population with a disability estimate, 2018-2022 ACS"
+        },
+        {
+          "name": "EP_LIMENG",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of persons (age 5+) who speak English less than well estimate, 2018-2022 ACS"
+        },
+        {
+          "name": "EP_NOVEH",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of households with no vehicle available estimate"
+        },
+        {
+          "name": "EP_NOINT",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of households without a computer with a broadband Internet subscription estimate, 2018-2022 ACS"
+        },
+        {
+          "name": "RPL_THEMES",
+          "type": "esriFieldTypeDouble",
+          "alias": "Overall percentile ranking"
+        },
+        {
+          "name": "RPL_THEME1",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentile ranking for Socioeconomic Status theme summary"
+        },
+        {
+          "name": "RPL_THEME2",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentile ranking for Household Characteristics theme summary"
+        },
+        {
+          "name": "RPL_THEME4",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentile ranking for Housing Type/ Transportation theme"
+        },
+        {
+          "name": "EP_AFAM",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of Black/African American, not Hispanic or Latino persons estimate, 2018-2022 ACS"
+        },
+        {
+          "name": "EP_HISP",
+          "type": "esriFieldTypeDouble",
+          "alias": "Percentage of Hispanic or Latino persons estimate, 2018-2022 ACS"
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "row_count": 1331,
+        "expected_row_count_band": {
+          "min": 1250,
+          "max": 1400
+        },
+        "key_definition": [
+          "FIPS"
+        ],
+        "unique_key_count": 1331,
+        "duplicate_key_count": 0,
+        "invalid_cook_county_fips_count": 0,
+        "missing_counts": {
+          "FIPS": 0,
+          "LOCATION": 0,
+          "E_TOTPOP": 0,
+          "EP_POV150": 0,
+          "EP_AGE65": 0,
+          "EP_AGE17": 0,
+          "EP_DISABL": 0,
+          "EP_LIMENG": 0,
+          "EP_NOVEH": 0,
+          "EP_NOINT": 0,
+          "RPL_THEMES": 0,
+          "RPL_THEME1": 0,
+          "RPL_THEME2": 0,
+          "RPL_THEME4": 0,
+          "EP_AFAM": 0,
+          "EP_HISP": 0
+        },
+        "sentinel_minus_999_counts": {
+          "FIPS": 0,
+          "LOCATION": 0,
+          "E_TOTPOP": 0,
+          "EP_POV150": 3,
+          "EP_AGE65": 3,
+          "EP_AGE17": 3,
+          "EP_DISABL": 3,
+          "EP_LIMENG": 3,
+          "EP_NOVEH": 3,
+          "EP_NOINT": 3,
+          "RPL_THEMES": 3,
+          "RPL_THEME1": 3,
+          "RPL_THEME2": 3,
+          "RPL_THEME4": 3,
+          "EP_AFAM": 3,
+          "EP_HISP": 3
+        },
+        "range_violation_counts": {
+          "E_TOTPOP": 0,
+          "EP_POV150": 0,
+          "EP_AGE65": 0,
+          "EP_AGE17": 0,
+          "EP_DISABL": 0,
+          "EP_LIMENG": 0,
+          "EP_NOVEH": 0,
+          "EP_NOINT": 0,
+          "RPL_THEMES": 0,
+          "RPL_THEME1": 0,
+          "RPL_THEME2": 0,
+          "RPL_THEME4": 0,
+          "EP_AFAM": 0,
+          "EP_HISP": 0
+        },
+        "coordinate_validation": {
+          "status": "not_applicable",
+          "reason": "The authoritative query specifies returnGeometry=false.",
+          "geometry_objects_present": 0
+        },
+        "exceeded_transfer_limit": false
+      }
+    }
+  },
+  "processing": {
+    "cook_county_filter": "STATEFP=17 and COUNTYFP=031",
+    "join_key": "TIGER GEOID = CDC FIPS",
+    "sentinel_policy": "Numeric values <= -900 become null and are excluded per metric.",
+    "population_allocation": "E_TOTPOP * projected intersection area / complete projected tract area",
+    "nearest_distance": "Euclidean EPSG:26916 distance from interior representative point to nearest listed center",
+    "within_counts": "Center count within 1000m/2000m of the same representative point",
+    "coverage": "Intersection area inside union of 1000m/2000m center buffers divided by intersection area",
+    "geometry_simplification_metres": {
+      "tract_access": 5,
+      "community_areas": 8
+    },
+    "svi_cleaning_evidence": {
+      "record_count": 1331,
+      "sentinel_counts": {
+        "E_TOTPOP": 0,
+        "EP_POV150": 3,
+        "EP_AGE65": 3,
+        "EP_AGE17": 3,
+        "EP_DISABL": 3,
+        "EP_LIMENG": 3,
+        "EP_NOVEH": 3,
+        "EP_NOINT": 3,
+        "RPL_THEMES": 3,
+        "RPL_THEME1": 3,
+        "RPL_THEME2": 3,
+        "RPL_THEME4": 3,
+        "EP_AFAM": 3,
+        "EP_HISP": 3
+      }
+    },
+    "join_evidence": {
+      "tiger_cook_tract_count": 1332,
+      "svi_record_count": 1331,
+      "matched_svi_count_all_cook": 1331,
+      "missing_svi_fips_all_cook": [
+        "17031990000"
+      ],
+      "chicago_intersecting_tract_count": 864,
+      "intersection_piece_count": 1660
+    }
+  },
+  "non_inference_guarantees": {
+    "facility_open_status": "not inferred",
+    "facility_activation": "not inferred",
+    "facility_accessibility": "not inferred",
+    "facility_capacity": "not inferred"
+  },
+  "outputs": {
+    "community_areas": {
+      "file": "dist/community_areas.geojson",
+      "bytes": 110987,
+      "sha256": "dc3dd447d208d7e0d3886e4b7902ea6529e1dd522bf59d578e59277b025bf80e"
+    },
+    "cooling_centers": {
+      "file": "dist/cooling_centers.geojson",
+      "bytes": 108264,
+      "sha256": "e8129c9031b759da6fd41c5e164580d082a65f02e85e94564712eab874e22dd7"
+    },
+    "tract_access": {
+      "file": "dist/tract_access.geojson",
+      "bytes": 1779686,
+      "sha256": "5841f0cd1edfdfd749e050f371463b35943e3b43c13a26268ffe0d960cf1afd1"
+    },
+    "community_access": {
+      "file": "dist/community_access.json",
+      "bytes": 35584,
+      "sha256": "80f3a47e9ac8c5cf177a3715f7fd4baffedd1e3b86139f0f3e5c7e8a20f802d6"
+    },
+    "disparities": {
+      "file": "dist/disparities.json",
+      "bytes": 10635,
+      "sha256": "899284169aa6f3530dcf97c530488cb2acab905a4060eb34bdf5a928d8f09af6"
+    },
+    "validation_report": {
+      "file": "dist/validation_report.json",
+      "bytes": 2920,
+      "sha256": "facfb177d3bcb7133ab089c772f233c16244a13a86e8485117892069547608f5"
+    }
+  },
+  "validation_status": "pass"
+}

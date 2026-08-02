@@ -1,0 +1,111 @@
+{
+  "generated_at_utc": "2026-08-02T04:26:35.401892Z",
+  "status": "pass",
+  "checks": [
+    {
+      "name": "community_area_count",
+      "status": "pass",
+      "evidence": 77
+    },
+    {
+      "name": "cooling_center_count",
+      "status": "pass",
+      "evidence": 287
+    },
+    {
+      "name": "all_centers_assigned_to_chicago",
+      "status": "pass",
+      "evidence": 0
+    },
+    {
+      "name": "chicago_intersection_piece_count",
+      "status": "pass",
+      "evidence": 1660
+    },
+    {
+      "name": "coverage_fraction_bounds",
+      "status": "pass",
+      "evidence": "0 <= 1km <= 2km <= 1"
+    },
+    {
+      "name": "center_count_monotonic",
+      "status": "pass",
+      "evidence": "0 <= 1km count <= 2km count <= all centers"
+    },
+    {
+      "name": "nonnegative_distance",
+      "status": "pass",
+      "evidence": 12.65532460440729
+    },
+    {
+      "name": "sentinel_safe",
+      "status": "pass",
+      "evidence": "No derived numeric metric is <= -900"
+    },
+    {
+      "name": "plausible_allocated_chicago_population",
+      "status": "pass",
+      "evidence": 2649352.15
+    },
+    {
+      "name": "cook_join_completeness",
+      "status": "pass",
+      "evidence": {
+        "tiger_cook_tract_count": 1332,
+        "svi_record_count": 1331,
+        "matched_svi_count_all_cook": 1331,
+        "missing_svi_fips_all_cook": [
+          "17031990000"
+        ],
+        "chicago_intersecting_tract_count": 864,
+        "intersection_piece_count": 1660
+      }
+    },
+    {
+      "name": "quartile_metric_count",
+      "status": "pass",
+      "evidence": [
+        "age_65_plus",
+        "disability",
+        "limited_english",
+        "no_vehicle",
+        "svi"
+      ]
+    },
+    {
+      "name": "serialized_geojson_validity",
+      "status": "pass",
+      "evidence": {
+        "community_areas": {
+          "feature_count": 77,
+          "invalid_or_out_of_bounds_ids": []
+        },
+        "cooling_centers": {
+          "feature_count": 287,
+          "invalid_or_out_of_bounds_ids": []
+        },
+        "tract_access": {
+          "feature_count": 1660,
+          "invalid_or_out_of_bounds_ids": []
+        }
+      }
+    },
+    {
+      "name": "output_size_cap",
+      "status": "pass",
+      "evidence": {
+        "community_areas": 110987,
+        "cooling_centers": 108264,
+        "tract_access": 1779686,
+        "community_access": 35584,
+        "disparities": 10635
+      }
+    }
+  ],
+  "warnings": [
+    "Distances are straight-line from tract/community representative points; they are not routes or travel times.",
+    "Covered population is an areal-interpolation estimate assuming population is uniform within each tract.",
+    "Cooling-center activation, open status, capacity, and accessibility are not present in the source and are not inferred.",
+    "Published hours are retained verbatim; users must confirm availability with 311 or the facility."
+  ]
+}

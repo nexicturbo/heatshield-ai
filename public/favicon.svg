@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HeatShield AI">
+  <rect width="64" height="64" rx="14" fill="#102A43"/>
+  <path d="M32 9 51 16v14c0 12.2-7.6 21-19 25-11.4-4-19-12.8-19-25V16l19-7Z" fill="#F7FAFC"/>
+  <path d="M32 15v34c8.3-3.7 13-10.2 13-19V20l-13-5Z" fill="#0E7490"/>
+  <circle cx="27" cy="27" r="7" fill="#F59E0B"/>
+  <path d="M27 16v4M27 34v4M16 27h4M34 27h4M19.2 19.2l2.8 2.8M32 32l2.8 2.8M19.2 34.8 22 32M32 22l2.8-2.8" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

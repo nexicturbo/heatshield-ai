@@ -1,0 +1,227 @@
+{
+  "dataset": "NOAA/NCEI Global Hourly",
+  "entries": [
+    {
+      "bytes": 1050488,
+      "fetched_at_utc": "2026-08-02T04:09:58.337873Z",
+      "relative_path": "data/raw/global-hourly-2015-e26997ecfe8802ea.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 10504,
+      "season": {
+        "end": "2015-09-30",
+        "start": "2015-05-01"
+      },
+      "sha256": "e26997ecfe8802eab44b6c36873d5defdd9913839b11a63e9beae640f09d4901",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2015-05-01T00%3A00%3A00&endDate=2015-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2015
+    },
+    {
+      "bytes": 1029288,
+      "fetched_at_utc": "2026-08-02T04:11:35.077125Z",
+      "relative_path": "data/raw/global-hourly-2016-e88ff79f1de2acbb.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 10292,
+      "season": {
+        "end": "2016-09-30",
+        "start": "2016-05-01"
+      },
+      "sha256": "e88ff79f1de2acbbda60f3ef8611812049f0d9197e8e4c5c48e48f384d6daa6f",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2016-05-01T00%3A00%3A00&endDate=2016-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2016
+    },
+    {
+      "bytes": 988088,
+      "fetched_at_utc": "2026-08-02T04:11:37.211363Z",
+      "relative_path": "data/raw/global-hourly-2017-04633c4eff9b0fee.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 9880,
+      "season": {
+        "end": "2017-09-30",
+        "start": "2017-05-01"
+      },
+      "sha256": "04633c4eff9b0feee35a9ca022f8dd1f079a0a01ac7751f6f0bd043d387b53a0",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2017-05-01T00%3A00%3A00&endDate=2017-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2017
+    },
+    {
+      "bytes": 1065088,
+      "fetched_at_utc": "2026-08-02T04:11:39.388724Z",
+      "relative_path": "data/raw/global-hourly-2018-6b68ff2f4e66643d.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 10650,
+      "season": {
+        "end": "2018-09-30",
+        "start": "2018-05-01"
+      },
+      "sha256": "6b68ff2f4e66643d37b5f17a19afcb525650cf99ecbf227d7048869ab618a3bc",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2018-05-01T00%3A00%3A00&endDate=2018-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2018
+    },
+    {
+      "bytes": 1052188,
+      "fetched_at_utc": "2026-08-02T04:11:41.498428Z",
+      "relative_path": "data/raw/global-hourly-2019-177727db3edd2494.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 10521,
+      "season": {
+        "end": "2019-09-30",
+        "start": "2019-05-01"
+      },
+      "sha256": "177727db3edd2494d965a3c60ca68e41867f404dc5137a82156fabac00497451",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2019-05-01T00%3A00%3A00&endDate=2019-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2019
+    },
+    {
+      "bytes": 1007788,
+      "fetched_at_utc": "2026-08-02T04:11:43.664073Z",
+      "relative_path": "data/raw/global-hourly-2020-c0dcc1b3304955b9.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 10077,
+      "season": {
+        "end": "2020-09-30",
+        "start": "2020-05-01"
+      },
+      "sha256": "c0dcc1b3304955b9430c43939ae84d4f4e7b0d4431dd911d91ae3ea823746115",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2020-05-01T00%3A00%3A00&endDate=2020-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2020
+    },
+    {
+      "bytes": 990788,
+      "fetched_at_utc": "2026-08-02T04:11:45.504826Z",
+      "relative_path": "data/raw/global-hourly-2021-38ebc1ac52475fe4.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 9907,
+      "season": {
+        "end": "2021-09-30",
+        "start": "2021-05-01"
+      },
+      "sha256": "38ebc1ac52475fe485cf8c05eb3bedc93183535172d197ba1cb9c65027b6d53b",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2021-05-01T00%3A00%3A00&endDate=2021-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2021
+    },
+    {
+      "bytes": 1007988,
+      "fetched_at_utc": "2026-08-02T04:11:47.463016Z",
+      "relative_path": "data/raw/global-hourly-2022-a573f759b0aa4759.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 10079,
+      "season": {
+        "end": "2022-09-30",
+        "start": "2022-05-01"
+      },
+      "sha256": "a573f759b0aa47597e221c5767555587f0eae30133a982a4d7fa66dea89435e1",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2022-05-01T00%3A00%3A00&endDate=2022-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2022
+    },
+    {
+      "bytes": 1005888,
+      "fetched_at_utc": "2026-08-02T04:11:49.618199Z",
+      "relative_path": "data/raw/global-hourly-2023-fd2814f33c509403.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 10058,
+      "season": {
+        "end": "2023-09-30",
+        "start": "2023-05-01"
+      },
+      "sha256": "fd2814f33c509403ca48d9f3fd30bd2b95a20466f4ec7fb5a781324d0b50871e",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2023-05-01T00%3A00%3A00&endDate=2023-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2023
+    },
+    {
+      "bytes": 1047388,
+      "fetched_at_utc": "2026-08-02T04:11:52.169752Z",
+      "relative_path": "data/raw/global-hourly-2024-352039917bea5163.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 10473,
+      "season": {
+        "end": "2024-09-30",
+        "start": "2024-05-01"
+      },
+      "sha256": "352039917bea5163cc6d7475b82f6a0b68b16a8db0d9d46c7dfd025649f28b4d",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2024-05-01T00%3A00%3A00&endDate=2024-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2024
+    },
+    {
+      "bytes": 814788,
+      "fetched_at_utc": "2026-08-02T04:11:55.859699Z",
+      "relative_path": "data/raw/global-hourly-2025-4d090bf75c3f566c.csv",
+      "response_headers": {
+        "content-type": "text/csv;charset=utf-8"
+      },
+      "rows": 8147,
+      "season": {
+        "end": "2025-09-30",
+        "start": "2025-05-01"
+      },
+      "sha256": "4d090bf75c3f566caaeecc5306de12390f7aa8d7e892ff921ba7fbd856398ea0",
+      "stations": [
+        "72530094846",
+        "72534014819"
+      ],
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=global-hourly&stations=72530094846%2C72534014819&startDate=2025-05-01T00%3A00%3A00&endDate=2025-09-30T23%3A59%3A59&dataTypes=TMP%2CDEW%2CWND&format=csv&includeAttributes=false",
+      "year": 2025
+    }
+  ],
+  "per_file_cap_bytes": 104857600,
+  "schema_version": 1
+}

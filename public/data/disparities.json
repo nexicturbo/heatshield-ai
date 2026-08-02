@@ -1,0 +1,303 @@
+{
+  "method": {
+    "quartiles": "Unweighted quartiles of valid unique Chicago-intersecting tract values; ties use inclusive upper bounds.",
+    "coverage": "Population-weighted areal coverage estimate under a uniform-within-tract assumption.",
+    "sentinels": "Values <= -900 are null and excluded per metric."
+  },
+  "citywide": {
+    "population_estimate": 2649352.15,
+    "estimated_population_covered_1km": 2218873.66,
+    "estimated_population_covered_2km": 2630529.14,
+    "coverage_percent_1km": 83.75,
+    "coverage_percent_2km": 99.29,
+    "population_weighted_mean_nearest_distance_m": 657.1,
+    "piece_count": 1652
+  },
+  "metrics": {
+    "svi": {
+      "source_field": "RPL_THEMES",
+      "valid_unique_tract_count": 860,
+      "excluded_unique_tract_count": 4,
+      "thresholds": {
+        "p25": 0.3906,
+        "p50": 0.70955,
+        "p75": 0.8561
+      },
+      "direction": "Q4 has the highest source-field values.",
+      "slices": {
+        "Q1": {
+          "population_estimate": 699828.71,
+          "estimated_population_covered_1km": 560968.46,
+          "estimated_population_covered_2km": 695915.02,
+          "coverage_percent_1km": 80.16,
+          "coverage_percent_2km": 99.44,
+          "population_weighted_mean_nearest_distance_m": 696.8,
+          "piece_count": 388,
+          "tract_count": 215
+        },
+        "Q2": {
+          "population_estimate": 637338.95,
+          "estimated_population_covered_1km": 538809.21,
+          "estimated_population_covered_2km": 624578.13,
+          "coverage_percent_1km": 84.54,
+          "coverage_percent_2km": 98.0,
+          "population_weighted_mean_nearest_distance_m": 671.3,
+          "piece_count": 418,
+          "tract_count": 215
+        },
+        "Q3": {
+          "population_estimate": 613149.58,
+          "estimated_population_covered_1km": 505455.66,
+          "estimated_population_covered_2km": 612699.68,
+          "coverage_percent_1km": 82.44,
+          "coverage_percent_2km": 99.93,
+          "population_weighted_mean_nearest_distance_m": 664.5,
+          "piece_count": 425,
+          "tract_count": 215
+        },
+        "Q4": {
+          "population_estimate": 699034.91,
+          "estimated_population_covered_1km": 613640.33,
+          "estimated_population_covered_2km": 697336.31,
+          "coverage_percent_1km": 87.78,
+          "coverage_percent_2km": 99.76,
+          "population_weighted_mean_nearest_distance_m": 598.0,
+          "piece_count": 421,
+          "tract_count": 215
+        }
+      },
+      "q4_minus_q1_coverage_percentage_points": {
+        "within_1km": 7.62,
+        "within_2km": 0.32
+      }
+    },
+    "no_vehicle": {
+      "source_field": "EP_NOVEH",
+      "valid_unique_tract_count": 860,
+      "excluded_unique_tract_count": 4,
+      "thresholds": {
+        "p25": 11.675,
+        "p50": 21.0,
+        "p75": 34.525
+      },
+      "direction": "Q4 has the highest source-field values.",
+      "slices": {
+        "Q1": {
+          "population_estimate": 636173.28,
+          "estimated_population_covered_1km": 490166.4,
+          "estimated_population_covered_2km": 619397.36,
+          "coverage_percent_1km": 77.05,
+          "coverage_percent_2km": 97.36,
+          "population_weighted_mean_nearest_distance_m": 759.4,
+          "piece_count": 408,
+          "tract_count": 215
+        },
+        "Q2": {
+          "population_estimate": 704916.67,
+          "estimated_population_covered_1km": 591003.7,
+          "estimated_population_covered_2km": 704492.24,
+          "coverage_percent_1km": 83.84,
+          "coverage_percent_2km": 99.94,
+          "population_weighted_mean_nearest_distance_m": 664.5,
+          "piece_count": 426,
+          "tract_count": 216
+        },
+        "Q3": {
+          "population_estimate": 696556.75,
+          "estimated_population_covered_1km": 594419.11,
+          "estimated_population_covered_2km": 695561.57,
+          "coverage_percent_1km": 85.34,
+          "coverage_percent_2km": 99.86,
+          "population_weighted_mean_nearest_distance_m": 621.1,
+          "piece_count": 407,
+          "tract_count": 214
+        },
+        "Q4": {
+          "population_estimate": 611705.45,
+          "estimated_population_covered_1km": 543284.44,
+          "estimated_population_covered_2km": 611077.98,
+          "coverage_percent_1km": 88.81,
+          "coverage_percent_2km": 99.9,
+          "population_weighted_mean_nearest_distance_m": 583.2,
+          "piece_count": 411,
+          "tract_count": 215
+        }
+      },
+      "q4_minus_q1_coverage_percentage_points": {
+        "within_1km": 11.76,
+        "within_2km": 2.54
+      }
+    },
+    "limited_english": {
+      "source_field": "EP_LIMENG",
+      "valid_unique_tract_count": 860,
+      "excluded_unique_tract_count": 4,
+      "thresholds": {
+        "p25": 0.5,
+        "p50": 3.1,
+        "p75": 10.325
+      },
+      "direction": "Q4 has the highest source-field values.",
+      "slices": {
+        "Q1": {
+          "population_estimate": 636154.94,
+          "estimated_population_covered_1km": 532957.69,
+          "estimated_population_covered_2km": 635262.87,
+          "coverage_percent_1km": 83.78,
+          "coverage_percent_2km": 99.86,
+          "population_weighted_mean_nearest_distance_m": 662.9,
+          "piece_count": 446,
+          "tract_count": 231
+        },
+        "Q2": {
+          "population_estimate": 577305.4,
+          "estimated_population_covered_1km": 484770.39,
+          "estimated_population_covered_2km": 574236.22,
+          "coverage_percent_1km": 83.97,
+          "coverage_percent_2km": 99.47,
+          "population_weighted_mean_nearest_distance_m": 644.8,
+          "piece_count": 379,
+          "tract_count": 200
+        },
+        "Q3": {
+          "population_estimate": 701046.57,
+          "estimated_population_covered_1km": 580881.02,
+          "estimated_population_covered_2km": 699913.75,
+          "coverage_percent_1km": 82.86,
+          "coverage_percent_2km": 99.84,
+          "population_weighted_mean_nearest_distance_m": 664.7,
+          "piece_count": 407,
+          "tract_count": 214
+        },
+        "Q4": {
+          "population_estimate": 734845.24,
+          "estimated_population_covered_1km": 620264.56,
+          "estimated_population_covered_2km": 721116.3,
+          "coverage_percent_1km": 84.41,
+          "coverage_percent_2km": 98.13,
+          "population_weighted_mean_nearest_distance_m": 654.5,
+          "piece_count": 420,
+          "tract_count": 215
+        }
+      },
+      "q4_minus_q1_coverage_percentage_points": {
+        "within_1km": 0.63,
+        "within_2km": -1.73
+      }
+    },
+    "disability": {
+      "source_field": "EP_DISABL",
+      "valid_unique_tract_count": 860,
+      "excluded_unique_tract_count": 4,
+      "thresholds": {
+        "p25": 7.3,
+        "p50": 10.45,
+        "p75": 15.725
+      },
+      "direction": "Q4 has the highest source-field values.",
+      "slices": {
+        "Q1": {
+          "population_estimate": 687604.69,
+          "estimated_population_covered_1km": 570390.45,
+          "estimated_population_covered_2km": 675711.85,
+          "coverage_percent_1km": 82.95,
+          "coverage_percent_2km": 98.27,
+          "population_weighted_mean_nearest_distance_m": 685.0,
+          "piece_count": 398,
+          "tract_count": 216
+        },
+        "Q2": {
+          "population_estimate": 756764.18,
+          "estimated_population_covered_1km": 622192.9,
+          "estimated_population_covered_2km": 752436.34,
+          "coverage_percent_1km": 82.22,
+          "coverage_percent_2km": 99.43,
+          "population_weighted_mean_nearest_distance_m": 659.6,
+          "piece_count": 403,
+          "tract_count": 214
+        },
+        "Q3": {
+          "population_estimate": 642098.18,
+          "estimated_population_covered_1km": 538844.55,
+          "estimated_population_covered_2km": 641073.89,
+          "coverage_percent_1km": 83.92,
+          "coverage_percent_2km": 99.84,
+          "population_weighted_mean_nearest_distance_m": 650.8,
+          "piece_count": 406,
+          "tract_count": 215
+        },
+        "Q4": {
+          "population_estimate": 562885.1,
+          "estimated_population_covered_1km": 487445.76,
+          "estimated_population_covered_2km": 561307.06,
+          "coverage_percent_1km": 86.6,
+          "coverage_percent_2km": 99.72,
+          "population_weighted_mean_nearest_distance_m": 626.9,
+          "piece_count": 445,
+          "tract_count": 215
+        }
+      },
+      "q4_minus_q1_coverage_percentage_points": {
+        "within_1km": 3.65,
+        "within_2km": 1.45
+      }
+    },
+    "age_65_plus": {
+      "source_field": "EP_AGE65",
+      "valid_unique_tract_count": 860,
+      "excluded_unique_tract_count": 4,
+      "thresholds": {
+        "p25": 8.8,
+        "p50": 12.7,
+        "p75": 17.525
+      },
+      "direction": "Q4 has the highest source-field values.",
+      "slices": {
+        "Q1": {
+          "population_estimate": 708476.28,
+          "estimated_population_covered_1km": 622555.1,
+          "estimated_population_covered_2km": 704021.27,
+          "coverage_percent_1km": 87.87,
+          "coverage_percent_2km": 99.37,
+          "population_weighted_mean_nearest_distance_m": 618.3,
+          "piece_count": 419,
+          "tract_count": 221
+        },
+        "Q2": {
+          "population_estimate": 724246.11,
+          "estimated_population_covered_1km": 594935.93,
+          "estimated_population_covered_2km": 716806.95,
+          "coverage_percent_1km": 82.15,
+          "coverage_percent_2km": 98.97,
+          "population_weighted_mean_nearest_distance_m": 681.4,
+          "piece_count": 389,
+          "tract_count": 210
+        },
+        "Q3": {
+          "population_estimate": 647981.43,
+          "estimated_population_covered_1km": 549628.47,
+          "estimated_population_covered_2km": 645944.75,
+          "coverage_percent_1km": 84.82,
+          "coverage_percent_2km": 99.69,
+          "population_weighted_mean_nearest_distance_m": 647.9,
+          "piece_count": 414,
+          "tract_count": 214
+        },
+        "Q4": {
+          "population_estimate": 568648.34,
+          "estimated_population_covered_1km": 451754.16,
+          "estimated_population_covered_2km": 563756.17,
+          "coverage_percent_1km": 79.44,
+          "coverage_percent_2km": 99.14,
+          "population_weighted_mean_nearest_distance_m": 685.0,
+          "piece_count": 430,
+          "tract_count": 215
+        }
+      },
+      "q4_minus_q1_coverage_percentage_points": {
+        "within_1km": -8.43,
+        "within_2km": -0.23
+      }
+    }
+  }
+}
