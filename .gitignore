@@ -48,3 +48,5 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+/benchmark-results/
+/model/artifacts/arm_onnx/
