@@ -1,0 +1,76 @@
+{
+  "columns": 54,
+  "comparisons": {
+    "exceed_95": {
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "exceed_95_probability": {
+      "atol": 2e-05,
+      "max_absolute_error": 1.569162906526686e-06,
+      "mean_absolute_error": 7.445910160889267e-08,
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "point_f": {
+      "atol": 0.001,
+      "max_absolute_error": 1.8913414137955442e-05,
+      "mean_absolute_error": 2.4847290088624713e-06,
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "q10_f": {
+      "atol": 0.001,
+      "max_absolute_error": 1.7535882861352547e-05,
+      "mean_absolute_error": 2.7226670524325286e-06,
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "q50_f": {
+      "atol": 0.001,
+      "max_absolute_error": 1.282867387430997e-05,
+      "mean_absolute_error": 2.1629523575010176e-06,
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "q90_f": {
+      "atol": 0.001,
+      "max_absolute_error": 1.0525227764901501e-05,
+      "mean_absolute_error": 2.485098267708194e-06,
+      "mismatched_rows": 0,
+      "passed": true
+    }
+  },
+  "fixture_sha256": "d60fd0fc24104d6428146c3ad122b610e0d7a193aa5c99d8d2f6caff7b0ff674",
+  "output_keys": [
+    "point_f",
+    "q10_f",
+    "q50_f",
+    "q90_f",
+    "exceed_95_probability",
+    "exceed_95"
+  ],
+  "passed": true,
+  "rows": 8192,
+  "schema_version": 1,
+  "scope": "Exact-runtime parity on a synthetic branch-coverage fixture; this does not re-estimate holdout accuracy",
+  "source_bundle_sha256": "39f639e8ee302c5cc8594e22f08d52b96161d84fa11a88e8b58d47443a92746d",
+  "system": {
+    "architecture": "aarch64",
+    "cpu_count": 4,
+    "executable": "python",
+    "github_actions": true,
+    "github_ref": "refs/pull/1/merge",
+    "github_repository": "nexicturbo/heatshield-ai",
+    "github_run_attempt": "1",
+    "github_run_id": "30748183130",
+    "github_run_url": "https://github.com/nexicturbo/heatshield-ai/actions/runs/30748183130",
+    "github_sha": "e63a71b296bdec529a00ba820cda4bda3667f65e",
+    "github_workflow": "Native Arm64 inference benchmark",
+    "operating_system": "Linux-6.17.0-1020-azure-aarch64-with-glibc2.39",
+    "python_implementation": "CPython",
+    "python_version": "3.12.13",
+    "runner_arch": "ARM64",
+    "runner_os": "Linux"
+  }
+}

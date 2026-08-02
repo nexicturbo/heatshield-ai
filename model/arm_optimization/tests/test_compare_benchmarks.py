@@ -19,8 +19,15 @@ class ComparisonEvidenceTests(unittest.TestCase):
         self.system = {
             "architecture": "aarch64",
             "github_actions": True,
+            "github_repository": "nexicturbo/heatshield-ai",
             "github_run_id": "123",
+            "github_run_url": (
+                "https://github.com/nexicturbo/heatshield-ai/actions/runs/123"
+            ),
             "github_sha": "a" * 40,
+            "github_workflow": "Native Arm64 inference benchmark",
+            "runner_arch": "ARM64",
+            "runner_os": "Linux",
         }
         self.thread_environment = {
             "OMP_NUM_THREADS": "1",
@@ -111,6 +118,7 @@ class ComparisonEvidenceTests(unittest.TestCase):
 
     def test_allows_claim_only_when_native_parity_and_speed_pass(self) -> None:
         result = self.run_compare()
+        self.assertTrue(result["official_github_evidence"])
         self.assertTrue(result["performance_claim_allowed"])
         self.assertAlmostEqual(
             result["batches"]["256"]["median_latency_speedup"], 1.25
@@ -121,6 +129,33 @@ class ComparisonEvidenceTests(unittest.TestCase):
         self.candidate["batches"]["256"]["latency_seconds"]["median"] = 0.011
         result = self.run_compare()
         self.assertFalse(result["primary_speedup_passed"])
+        self.assertFalse(result["performance_claim_allowed"])
+
+    def test_local_native_arm_run_cannot_allow_performance_claim(self) -> None:
+        self.system.update(
+            {
+                "github_actions": False,
+                "github_repository": None,
+                "github_run_id": None,
+                "github_run_url": None,
+                "github_sha": None,
+                "github_workflow": None,
+                "runner_arch": None,
+                "runner_os": None,
+            }
+        )
+        result = self.run_compare()
+        self.assertTrue(result["native_arm_evidence"])
+        self.assertTrue(result["primary_speedup_passed"])
+        self.assertFalse(result["official_github_evidence"])
+        self.assertFalse(result["performance_claim_allowed"])
+
+    def test_mismatched_github_run_url_cannot_allow_claim(self) -> None:
+        self.system["github_run_url"] = (
+            "https://github.com/nexicturbo/heatshield-ai/actions/runs/456"
+        )
+        result = self.run_compare()
+        self.assertFalse(result["official_github_evidence"])
         self.assertFalse(result["performance_claim_allowed"])
 
     def test_rejects_parity_from_another_fixture(self) -> None:

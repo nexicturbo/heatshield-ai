@@ -24,11 +24,13 @@ runtime versions, architecture, fixture hash, and an output digest in JSON.
 
 ## Evidence boundary
 
-No Arm performance claim exists until `comparison.json` contains all three:
+No Arm performance claim exists until `comparison.json` contains all four:
 
 1. `native_arm_evidence: true`;
-2. `parity_passed: true`; and
-3. `primary_speedup_passed: true` for the configured 1.20x median-latency gate.
+2. `official_github_evidence: true` with a consistent GitHub Actions run URL,
+   commit SHA, repository, workflow, and native Arm64 runner identity;
+3. `parity_passed: true`; and
+4. `primary_speedup_passed: true` for the configured 1.20x median-latency gate.
 
 The workflow passes `--enforce-gate`, so a result below 1.20x cannot produce a
 green evidence job. `comparison.json` also embeds the exact unchanged parity
@@ -93,7 +95,34 @@ mismatches. Maximum absolute errors were 1.89134e-05 for the point forecast,
 1.75359e-05 for q10, 1.28287e-05 for q50, 1.05252e-05 for q90, and
 1.56916e-06 for calibrated probability.
 
-The run's `heatshield-native-arm64-evidence` artifact contains
-`comparison.json`, `parity.json`, both benchmark reports, the pinned Python
-environment, SHA-256 checksums, and the exported ONNX package. Local x86
-results remain harness smokes and must not be presented as Arm evidence.
+The exact small reports are preserved in the repository as
+[`evidence/comparison.json`](evidence/comparison.json),
+[`evidence/parity.json`](evidence/parity.json),
+[`evidence/baseline.json`](evidence/baseline.json), and
+[`evidence/candidate.json`](evidence/candidate.json). The pinned environment is
+in [`evidence/python-environment.txt`](evidence/python-environment.txt), and the
+original artifact manifest is in
+[`evidence/SHA256SUMS.txt`](evidence/SHA256SUMS.txt). This keeps the measured
+results and their original checksums durable after GitHub's downloadable
+artifact expires.
+
+These files are byte-for-byte copies, so the archived `comparison.json`
+retains the report schema emitted by that run. Re-evaluate its immutable raw
+reports with the current, stricter four-field gate using:
+
+```bash
+python model/arm_optimization/compare_benchmarks.py \
+  --baseline model/arm_optimization/evidence/baseline.json \
+  --candidate model/arm_optimization/evidence/candidate.json \
+  --parity model/arm_optimization/evidence/parity.json \
+  --output benchmark-results/reverified-comparison.json \
+  --primary-batch 256 --minimum-speedup 1.20 \
+  --require-native-arm --enforce-gate
+```
+
+The run's `heatshield-native-arm64-evidence` artifact additionally contains
+the exported ONNX package. The committed manifest records those binary hashes,
+while the package remains reproducible from the pinned source and workflow.
+Local runs, including local native-Arm runs, are harness smokes and cannot set
+`performance_claim_allowed`; the claim gate requires identified official
+GitHub Actions provenance.
