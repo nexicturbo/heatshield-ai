@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,42 @@ EXPECTED_PARITY_TOLERANCES = {
     "q90_f": 1e-3,
     "exceed_95_probability": 2e-5,
 }
+
+
+def official_github_native_arm_provenance(system: dict[str, Any]) -> bool:
+    """Return whether metadata identifies an official GitHub Arm64 Actions run."""
+    repository = system.get("github_repository")
+    run_id = system.get("github_run_id")
+    run_url = system.get("github_run_url")
+    sha = system.get("github_sha")
+    workflow = system.get("github_workflow")
+    runner_arch = system.get("runner_arch")
+    runner_os = system.get("runner_os")
+    architecture = system.get("architecture")
+
+    if system.get("github_actions") is not True:
+        return False
+    if not isinstance(repository, str) or repository.strip() != repository:
+        return False
+    repository_parts = repository.split("/")
+    if len(repository_parts) != 2 or not all(repository_parts):
+        return False
+    if not isinstance(run_id, str) or not run_id.isdecimal() or int(run_id) < 1:
+        return False
+    if not isinstance(sha, str) or re.fullmatch(r"[0-9a-fA-F]{40}", sha) is None:
+        return False
+    if not isinstance(workflow, str) or not workflow.strip():
+        return False
+    expected_url = f"https://github.com/{repository}/actions/runs/{run_id}"
+    if run_url != expected_url:
+        return False
+    normalized_architecture = str(architecture or "").lower().replace("_", "")
+    normalized_runner_arch = str(runner_arch or "").lower().replace("_", "")
+    return bool(
+        normalized_architecture in {"aarch64", "arm64"}
+        and normalized_runner_arch in {"aarch64", "arm64"}
+        and runner_os == "Linux"
+    )
 
 
 def parity_details_passed(parity: dict[str, Any]) -> bool:
@@ -123,14 +160,22 @@ def compare(
     native_arm_evidence = bool(
         baseline["native_arm64"] and candidate["native_arm64"]
     )
+    official_github_evidence = official_github_native_arm_provenance(
+        baseline["system"]
+    )
     parity_passed = parity_details_passed(parity)
     speedup_passed = primary["median_latency_speedup"] >= minimum_speedup
     performance_claim_allowed = bool(
-        native_arm_evidence and controlled_threads and parity_passed and speedup_passed
+        native_arm_evidence
+        and official_github_evidence
+        and controlled_threads
+        and parity_passed
+        and speedup_passed
     )
     report = {
         "schema_version": 1,
         "native_arm_evidence": native_arm_evidence,
+        "official_github_evidence": official_github_evidence,
         "parity_passed": parity_passed,
         "parity_tolerances_locked": True,
         "controlled_thread_environment": controlled_threads,
@@ -140,7 +185,8 @@ def compare(
         "performance_claim_allowed": performance_claim_allowed,
         "claim_policy": (
             "A performance claim requires runtime parity, two same-environment native "
-            "Arm64 runs, and the configured primary-batch median-latency speedup."
+            "Arm64 runs from an identified official GitHub Actions job, and the "
+            "configured primary-batch median-latency speedup."
         ),
         "fixture_sha256": baseline["fixture_sha256"],
         "system": baseline["system"],

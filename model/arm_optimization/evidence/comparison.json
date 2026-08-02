@@ -1,0 +1,103 @@
+{
+  "artifact_bytes": {
+    "baseline": 631764,
+    "candidate": 825237
+  },
+  "batches": {
+    "256": {
+      "baseline_median_seconds": 0.012330438999999999,
+      "baseline_p95_seconds": 0.012505252,
+      "candidate_median_seconds": 0.004855972,
+      "candidate_p95_seconds": 0.00489888875,
+      "median_latency_speedup": 2.5392318983717366,
+      "p95_latency_speedup": 2.552671154249012
+    }
+  },
+  "benchmark_configuration": {
+    "controlled_thread_environment": true,
+    "measured_iterations": 100,
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "threads": 1,
+    "warmup_iterations": 10
+  },
+  "claim_policy": "A performance claim requires runtime parity, two same-environment native Arm64 runs, and the configured primary-batch median-latency speedup.",
+  "controlled_thread_environment": true,
+  "fixture_sha256": "d60fd0fc24104d6428146c3ad122b610e0d7a193aa5c99d8d2f6caff7b0ff674",
+  "maximum_rss_bytes": {
+    "baseline": 162934784,
+    "candidate": 65974272
+  },
+  "minimum_median_latency_speedup": 1.2,
+  "native_arm_evidence": true,
+  "parity_comparisons": {
+    "exceed_95": {
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "exceed_95_probability": {
+      "atol": 2e-05,
+      "max_absolute_error": 1.569162906526686e-06,
+      "mean_absolute_error": 7.445910160889267e-08,
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "point_f": {
+      "atol": 0.001,
+      "max_absolute_error": 1.8913414137955442e-05,
+      "mean_absolute_error": 2.4847290088624713e-06,
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "q10_f": {
+      "atol": 0.001,
+      "max_absolute_error": 1.7535882861352547e-05,
+      "mean_absolute_error": 2.7226670524325286e-06,
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "q50_f": {
+      "atol": 0.001,
+      "max_absolute_error": 1.282867387430997e-05,
+      "mean_absolute_error": 2.1629523575010176e-06,
+      "mismatched_rows": 0,
+      "passed": true
+    },
+    "q90_f": {
+      "atol": 0.001,
+      "max_absolute_error": 1.0525227764901501e-05,
+      "mean_absolute_error": 2.485098267708194e-06,
+      "mismatched_rows": 0,
+      "passed": true
+    }
+  },
+  "parity_passed": true,
+  "parity_tolerances_locked": true,
+  "performance_claim_allowed": true,
+  "primary_batch_size": 256,
+  "primary_speedup_passed": true,
+  "schema_version": 1,
+  "system": {
+    "architecture": "aarch64",
+    "cpu_count": 4,
+    "executable": "python",
+    "github_actions": true,
+    "github_ref": "refs/pull/1/merge",
+    "github_repository": "nexicturbo/heatshield-ai",
+    "github_run_attempt": "1",
+    "github_run_id": "30748183130",
+    "github_run_url": "https://github.com/nexicturbo/heatshield-ai/actions/runs/30748183130",
+    "github_sha": "e63a71b296bdec529a00ba820cda4bda3667f65e",
+    "github_workflow": "Native Arm64 inference benchmark",
+    "operating_system": "Linux-6.17.0-1020-azure-aarch64-with-glibc2.39",
+    "python_implementation": "CPython",
+    "python_version": "3.12.13",
+    "runner_arch": "ARM64",
+    "runner_os": "Linux"
+  }
+}

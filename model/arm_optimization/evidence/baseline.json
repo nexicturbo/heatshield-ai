@@ -1,0 +1,59 @@
+{
+  "artifact_bytes": 631764,
+  "batches": {
+    "256": {
+      "batch_size": 256,
+      "iterations": 100,
+      "latency_seconds": {
+        "max": 0.012665714,
+        "median": 0.012330438999999999,
+        "min": 0.01216749,
+        "p95": 0.012505252
+      },
+      "throughput_rows_per_second": {
+        "at_median_latency": 20761.629006071886,
+        "at_p95_latency": 20471.398737106618
+      }
+    }
+  },
+  "controlled_thread_environment": true,
+  "engine": "baseline",
+  "fixture_columns": 54,
+  "fixture_rows": 8192,
+  "fixture_sha256": "d60fd0fc24104d6428146c3ad122b610e0d7a193aa5c99d8d2f6caff7b0ff674",
+  "last_output_sha256": "106d331b712bc6e006c78bac990585e7bc7434452ed53bda85956c9b19702809",
+  "load_seconds": 0.923329949000049,
+  "maximum_rss_bytes": 162934784,
+  "measured_iterations": 100,
+  "native_arm64": true,
+  "schema_version": 1,
+  "scope": "Synthetic branch-coverage inference benchmark; not accuracy evidence",
+  "system": {
+    "architecture": "aarch64",
+    "cpu_count": 4,
+    "executable": "python",
+    "github_actions": true,
+    "github_ref": "refs/pull/1/merge",
+    "github_repository": "nexicturbo/heatshield-ai",
+    "github_run_attempt": "1",
+    "github_run_id": "30748183130",
+    "github_run_url": "https://github.com/nexicturbo/heatshield-ai/actions/runs/30748183130",
+    "github_sha": "e63a71b296bdec529a00ba820cda4bda3667f65e",
+    "github_workflow": "Native Arm64 inference benchmark",
+    "operating_system": "Linux-6.17.0-1020-azure-aarch64-with-glibc2.39",
+    "python_implementation": "CPython",
+    "python_version": "3.12.13",
+    "runner_arch": "ARM64",
+    "runner_os": "Linux"
+  },
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "threads": 1,
+  "warmup_iterations": 10,
+  "warning_policy": "Suppress only sklearn's feature-name diagnostic while scoring identical ndarray inputs; predictions and parity checks remain unchanged"
+}
