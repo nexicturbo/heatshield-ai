@@ -136,6 +136,26 @@ report](public/data/validation_report.json), and [access-disparity
 analysis](public/data/disparities.json). See [MODEL_CARD.md](MODEL_CARD.md) for
 the model's intended use and limits.
 
+## Native Arm64 optimization
+
+HeatShield's five-model scikit-learn bundle also has a parity-safe ONNX Runtime
+path for Arm64 cloud inference. The exporter preserves fitted preprocessing,
+calibration, quantile ordering, the final decision threshold, and
+`HistGradientBoosting` branch behavior when float64 split thresholds must be
+serialized as float32 ONNX attributes.
+
+The controlled [native Arm64 evidence
+run](https://github.com/nexicturbo/heatshield-ai/actions/runs/30748183130)
+measured a **2.539x median batch-256 latency speedup** over the original joblib
+runtime: 0.012330439 seconds versus 0.004855972 seconds. Exact parity passed on
+8,192 branch-coverage rows with zero classification mismatches, and the
+committed workflow permits the claim only when the native architecture,
+locked tolerances, identical fixture and runner, controlled thread policy, and
+1.20x minimum gate all pass.
+
+See [model/arm_optimization/README.md](model/arm_optimization/README.md) for the
+reproduction commands, evidence boundary, and machine-readable artifacts.
+
 ## Local development
 
 Prerequisite: Node.js 22.13 or newer.

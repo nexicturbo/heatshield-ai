@@ -73,25 +73,27 @@ The GitHub Actions workflow runs the same commands on GitHub's native
 `ubuntu-24.04-arm` image, requires `platform.machine()` to resolve to Arm64,
 and uploads every machine-readable result plus the exported ONNX package.
 
-## External runner evidence still required
+## Verified native Arm64 evidence
 
-Local x86 results are useful only as a harness smoke test. Before making the
-contest performance claim, preserve a successful GitHub Actions run for the
-exact submitted commit and its `heatshield-native-arm64-evidence` artifact. The
-artifact must contain:
+[GitHub Actions run 30748183130](https://github.com/nexicturbo/heatshield-ai/actions/runs/30748183130)
+completed successfully on a native `ubuntu-24.04-arm` runner. Its controlled
+batch-256 result used 10 warmups, 100 measured iterations, and one numerical
+library thread for both runtimes:
 
-- `comparison.json` with `system.architecture` equal to `aarch64` or `arm64`, a
-  non-null GitHub run URL and commit SHA, `parity_passed: true`,
-  `primary_batch_size: 256`, `primary_speedup_passed: true`, and
-  `performance_claim_allowed: true`;
-- `parity.json` showing zero classification mismatches and every numeric result
-  within the committed tolerances (1e-3 for forecasts and 2e-5 for calibrated
-  probability);
-- `baseline.json` and `candidate.json` showing identical fixture, runner, thread
-  policy, warmup count, and iteration count; and
-- `SHA256SUMS.txt`, the pinned Python environment, and the exported ONNX package
-  so the evidence can be independently checked.
+- baseline median latency: 0.012330439 seconds;
+- ONNX Runtime median latency: 0.004855972 seconds;
+- median latency speedup: **2.539231898x**;
+- p95 latency speedup: **2.552671154x**;
+- baseline maximum RSS: 162,934,784 bytes;
+- candidate maximum RSS: 65,974,272 bytes; and
+- `performance_claim_allowed: true`.
 
-A green job URL plus that artifact is the remaining external proof. Until it
-exists, `performance_claim_allowed` must remain false and no native-Arm speedup
-number should be presented as contest evidence.
+Exact parity passed on all 8,192 fixture rows with zero classification
+mismatches. Maximum absolute errors were 1.89134e-05 for the point forecast,
+1.75359e-05 for q10, 1.28287e-05 for q50, 1.05252e-05 for q90, and
+1.56916e-06 for calibrated probability.
+
+The run's `heatshield-native-arm64-evidence` artifact contains
+`comparison.json`, `parity.json`, both benchmark reports, the pinned Python
+environment, SHA-256 checksums, and the exported ONNX package. Local x86
+results remain harness smokes and must not be presented as Arm evidence.
